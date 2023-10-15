@@ -1,0 +1,36 @@
+<app-progress-bar *ngIf="loading"></app-progress-bar>
+<div *ngIf="!loading" class="row mt-1">
+    <div class="col-lg-4 offset-lg-4">
+        <div class="card text-white bg-secondary mb-3" style="max-width: 25rem;">
+            <div class="card-header text-center">{{ operacion }} Encuesta</div>
+            <div class="card-body">
+                <form [formGroup]="form" (ngSubmit)="addEncuesta()">
+                    <input formControlName="nombre" type="text" class="form-control" placeholder="Ingrese nombre">
+                    <span *ngIf="form.get('nombre')?.hasError('required') && form.get('nombre')?.touched">
+                        El campo nombre es <strong>requerido</strong>
+                    </span>
+                    <input formControlName="descripcion" type="text" class="form-control mt-2" placeholder="Ingrese descripcion">
+                    <span *ngIf="form.get('descripcion')?.hasError('required') && form.get('descripcion')?.touched">
+                        El campo descripcion es <strong>requerido</strong>
+                    </span>
+
+                    <input formControlName="cantPreg" type="number" class="form-control mt-2" placeholder="Ingrese cantidad de preguntas">
+                    <span *ngIf="form.get('cantPreg')?.hasError('required') && form.get('cantPreg')?.touched">
+                        Este campo es <strong>requerido</strong>
+                    </span>
+
+                   
+                    
+                    <div class="row mt-2 text-center">
+                        <div class="col-lg-6">
+                            <button routerLink="/" type="button" class="btn btn-secondary">Volver</button>
+                        </div>
+                        <div class="col-lg-6">
+                            <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Aceptar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
