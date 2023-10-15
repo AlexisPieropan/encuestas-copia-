@@ -6,28 +6,33 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // Modulos
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 
 // Componentes
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { ListProductsComponent } from './components/list-products/list-products.component';
-import { AddEditProductComponent } from './components/add-edit-product/add-edit-product.component';
 import { ProgressBarComponent } from './shared/progress-bar/progress-bar.component';
+import { SurveyComponent } from './components/survey/survey.component';
+import { LoginComponent } from './components/login/login.component';
+import { MatFormFieldModule } from '@angular/material';
+import { FooterComponent } from './components/footer/footer.component';
 import { AddEditEncuestaComponent } from './components/add-edit-encuesta/add-edit-encuesta.component';
 import { ListEncuestaComponent } from './components/list-encuesta/list-encuesta.component';
+// import { AddEditPreguntaComponent } from './components/add-edit-pregunta/add-edit-pregunta.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ListProductsComponent,
-    AddEditProductComponent,
     ProgressBarComponent,
+    SurveyComponent,
+    LoginComponent,
+    FooterComponent,
     AddEditEncuestaComponent,
-    ListEncuestaComponent
+    ListEncuestaComponent,
+    // AddEditPreguntaComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +44,9 @@ import { ListEncuestaComponent } from './components/list-encuesta/list-encuesta.
       timeOut: 10000,
       positionClass: 'toast-bottom-right'
     }), // ToastrModule added
+    MatFormFieldModule,
+    FormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

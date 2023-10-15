@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
+import Swal from 'sweetalert2'
 
 import { Encuesta } from 'src/app/interfaces/encuesta';
 import { EncuestaService } from 'src/app/services/encuesta.service';
@@ -22,15 +22,15 @@ export class AddEditEncuestaComponent implements OnInit {
   constructor(private fb: FormBuilder,
     private _encuestaService: EncuestaService,
     private router: Router,
-    private toastr: ToastrService,
+    // private toastr: ToastrService,
     private aRouter: ActivatedRoute) {
 
       
     this.form = this.fb.group({
       nombre: ['', Validators.required],
       descripcion: ['', Validators.required],
-      cantPreg: ['', Validators.required],
-    })
+      cantPreg: ['', [Validators.required, Validators.min(1), Validators.max(10)]],
+    });
     this.id = Number(aRouter.snapshot.paramMap.get('id'));
 
      }
@@ -73,26 +73,39 @@ export class AddEditEncuestaComponent implements OnInit {
       // Es editar 
       encuesta.id = this.id;
       this._encuestaService.updateEncuesta(this.id, encuesta).subscribe(() => {
-        this.toastr.info(`La encuesta ${encuesta.nombre} fue actualizada con exito`, 'Encuesta actualizada');
+        Swal.fire({
+          text: `La encuesta ${encuesta.nombre} fue actualizada con exito`,
+          icon: 'success',
+          background: '#1a891afa',
+          color: 'white',
+          toast: true,
+          position: 'bottom-end',
+          timer: 2000,
+          timerProgressBar: true,
+          showConfirmButton: false,
+        })
         this.loading = false;
-        this.router.navigate(['/']);
+        this.router.navigate(['/main']);
       })
-
     } else {
       // Es agregagar
       this._encuestaService.saveEncuesta(encuesta).subscribe(() => {
-        this.toastr.success(`La encuesta ${encuesta.nombre} fue registrada con exito`, 'Encuesta registrada');
+        Swal.fire({
+          text: `La encuesta ${encuesta.nombre} fue registrada con exito`,
+          icon: 'success',
+          background: '#1a891afa',
+          color: 'white',
+          toast: true,
+          position: 'bottom-end',
+          timer: 2000,
+          timerProgressBar: true,
+          showConfirmButton: false,
+        })
         this.loading = false;
-        this.router.navigate(['/']);
+        this.router.navigate(['/main']);
       })
     }
-
-
-
-
   }
-
-
-  }
+}
 
 

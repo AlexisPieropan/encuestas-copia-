@@ -1,0 +1,25 @@
+<!-- <app-progress-bar *ngIf="loading"></app-progress-bar>
+<div *ngIf="!loading" class="card container mt-3">
+    <div div class="title card-header">
+        <h4>{{ operacion }} preguntas de encuesta</h4>
+    </div>
+        
+    <div class="table table-hover">
+        <form [formGroup]="form" (ngSubmit)="getPregunta()" class="card-body">
+
+            <input formControlName="pregunta" type="text" class="form-control" placeholder="Ingrese la pregunta">
+            <span *ngIf="form.get('pregunta')?.hasError('required') && form.get('pregunta')?.touched">
+                El campo nombre es <strong>requerido</strong>
+            </span>       
+            
+            <div class="row mt-2 text-center">
+                <div class="col-lg-6">
+                    <button routerLink="/main" type="button" class="btn btn-secondary">Volver</button>
+                </div>
+                <div class="col-lg-6">
+                    <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Aceptar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div> -->
