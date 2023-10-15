@@ -1,4 +1,6 @@
-export interface Encuesta {
+export interface Pregunta {
     id?: number;
-    pregunta: string;
+    texto: string;
+    tipo: string;
+    tipoResp: string
 }

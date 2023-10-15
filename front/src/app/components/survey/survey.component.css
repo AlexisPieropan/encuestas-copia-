@@ -19,3 +19,8 @@ h4{
 .card-body{
     background-color: #212124;
 }
+textarea{
+    resize: both;
+    width: 350px;
+    height: 100px;
+}
