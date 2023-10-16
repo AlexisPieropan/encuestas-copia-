@@ -1,27 +1,60 @@
-<!-- <app-progress-bar *ngIf="loading"></app-progress-bar> -->
-<div class="card container mt-3">
+<app-progress-bar *ngIf="loading"></app-progress-bar>
+<div *ngIf="!loading" class="card container mt-3">
   <div class="title card-header">
-    <h4>Encuesta de Turismo</h4>
+    <h4>Detalles de la Encuesta</h4>
   </div>
   <div class="table table-hover">
-    <form class="card-body " (ngSubmit)="submitEncuesta()">
-      <div>
-        <h2 class="text-center">nombre de la encuesta</h2>
-        <h4 class="text-center">descripcion de la encuesta</h4>
-      </div>
+    <form class="card-body" (ngSubmit)="submitEncuesta()">
+      <h2 class="text-center">{{ currentEncuesta.nombre }}</h2>
+      <h4 class="text-center">{{ currentEncuesta.descripcion }}</h4>
       
       <div class="md-form form-group mt-3">
-        <label for="hospedaje">¿Dónde se hospedó durante su viaje?</label>
+        <label for="hospedaje">{{ currentEncuesta.preg1 }}</label>
         <input type="text" id="hospedaje" class="form-control" name="hospedaje" [(ngModel)]="encuestaRespuestas.hospedaje" />
       </div>
 
       <div class="md-form form-group mt-3">
-        <label for="hospedaje">¿Que atracciones visitó durante su estadía?</label>
+        <label for="hospedaje">{{ currentEncuesta.preg2 }}</label>
         <input type="text" id="hospedaje" class="form-control" name="hospedaje" [(ngModel)]="encuestaRespuestas.hospedaje" />
       </div>
 
       <div class="md-form form-group mt-3">
-        <label for="hospedaje">¿Como calificaría el estado general de la ciudad? </label>
+        <label for="hospedaje">{{ currentEncuesta.preg3 }}</label>
+        <input type="text" id="hospedaje" class="form-control" name="hospedaje" [(ngModel)]="encuestaRespuestas.hospedaje" />
+      </div>
+
+      <div class="md-form form-group mt-3">
+        <label for="hospedaje">{{ currentEncuesta.preg4 }}</label>
+        <input type="text" id="hospedaje" class="form-control" name="hospedaje" [(ngModel)]="encuestaRespuestas.hospedaje" />
+      </div>
+
+      <div class="md-form form-group mt-3">
+        <label for="hospedaje">{{ currentEncuesta.preg5 }}</label>
+        <input type="text" id="hospedaje" class="form-control" name="hospedaje" [(ngModel)]="encuestaRespuestas.hospedaje" />
+      </div>
+
+      <div class="md-form form-group mt-3">
+        <label for="hospedaje">{{ currentEncuesta.preg6 }}</label>
+        <input type="text" id="hospedaje" class="form-control" name="hospedaje" [(ngModel)]="encuestaRespuestas.hospedaje" />
+      </div>
+
+      <div class="md-form form-group mt-3">
+        <label for="hospedaje">{{ currentEncuesta.preg7 }}</label>
+        <input type="text" id="hospedaje" class="form-control" name="hospedaje" [(ngModel)]="encuestaRespuestas.hospedaje" />
+      </div>
+
+      <div class="md-form form-group mt-3">
+        <label for="hospedaje">{{ currentEncuesta.preg8 }}</label>
+        <input type="text" id="hospedaje" class="form-control" name="hospedaje" [(ngModel)]="encuestaRespuestas.hospedaje" />
+      </div>
+
+      <div class="md-form form-group mt-3">
+        <label for="hospedaje">{{ currentEncuesta.preg9 }}</label>
+        <input type="text" id="hospedaje" class="form-control" name="hospedaje" [(ngModel)]="encuestaRespuestas.hospedaje" />
+      </div>
+
+      <div class="md-form form-group mt-3">
+        <label for="hospedaje">{{ currentEncuesta.preg10 }}</label>
         <input type="text" id="hospedaje" class="form-control" name="hospedaje" [(ngModel)]="encuestaRespuestas.hospedaje" />
       </div>
 
@@ -34,7 +67,7 @@
           <option value="Más de una semana">Más de una semana</option>
         </select>
       </div>
-      <br> -->
+      <br>
 
       <div>
         <label>¿Participó en alguna excursión?</label>
@@ -53,7 +86,7 @@
           <textarea id="comentarios" name="comentarios" [(ngModel)]="encuestaRespuestas.comentarios"></textarea>
         </div>
       </div>
-      <br>
+      <br> -->
 
       <div class="btn_survey">
         <div>
@@ -61,11 +94,9 @@
           <button type="submit" class="btn btn-primary m-1">Enviar Encuesta</button>
         </div>
         <div>
-          <button routerLink="/main" type="button" class="btn btn-secondary m-1">volver</button>
+          <button routerLink="/main" type="button" class="btn btn-secondary m-1">Volver</button>
         </div>
       </div>
-      <br>
-
     </form>
   </div>
 </div>

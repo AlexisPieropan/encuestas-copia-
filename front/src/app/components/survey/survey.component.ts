@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Encuesta } from 'src/app/interfaces/encuesta';
+import { EncuestaService } from 'src/app/services/encuesta.service';
 import Swal from 'sweetalert2';
 
 import { FormsModule } from '@angular/forms';
@@ -14,6 +17,11 @@ export class SurveyComponent {
   //     loading = false;
   // },1000)
 
+  loading: boolean = false;
+  currentEncuesta: any = {};
+  
+  constructor(private _encuestaService: EncuestaService, private _route: ActivatedRoute,) { }
+
   encuestaRespuestas: any = {
     hospedaje: '',
     tiempoEstadia: '',
@@ -21,16 +29,22 @@ export class SurveyComponent {
     comentarios: ''
   };
 
+  ngOnInit(): void {
+    this.loading = true;
+    const id = this._route.snapshot.params['id'];
+    this._encuestaService.getEncuesta(id).subscribe((data: any) => {
+      this.currentEncuesta = data;
+      this.loading = false;
+    });
+  }
+
   submitEncuesta() {
-    // ver respuesta en objeto
     console.log('Respuestas enviadas:', this.encuestaRespuestas);
     Swal.fire({
       text: 'Encuesta enviada! Muchas gracias.',
       icon: 'success',
       background: '#1a891afa',
       color: 'white',
-      // toast: true,
-      // position: 'bottom-end',  
       timer: 2000,
       timerProgressBar: true,
       showConfirmButton: false,

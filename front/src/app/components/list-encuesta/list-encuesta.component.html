@@ -10,7 +10,6 @@
       <tr>
         <th scope="col">Nombre</th>
         <th scope="col">Descripcion</th>
-        <th scope="col">Cant. Preguntas</th>
         <th scope="col"></th>
       </tr>
     </thead>
@@ -18,9 +17,8 @@
       <tr *ngFor="let item of listEncuestas" class="table-active card-body">
         <td>{{ item.nombre }}</td>
         <td>{{ item.descripcion }}</td>
-        <td>{{ item.cantPreg }}</td>
         <td>
-          <button routerLink="/survey" type="button" class="btn btn-outline-success btn-sm ms-2">Ver Encuesta</button>
+          <button routerLink="/survey/{{ item.id }}" type="button" class="btn btn-outline-success btn-sm ms-2">Ver Encuesta</button>
         </td>
         <td>
           <button routerLink="/edit/{{ item.id }}" type="button" class="btn btn-outline-light btn-sm">Editar</button>

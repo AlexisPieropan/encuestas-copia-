@@ -3,9 +3,9 @@
     <div div class="title card-header">
         <h4>{{ operacion }} Encuesta</h4>
     </div>
-        
+
     <div class="table table-hover">
-        <form [formGroup]="form" (ngSubmit)="addEncuesta()"  class="card-body">
+        <form [formGroup]="form" (ngSubmit)="addEncuesta()" class="card-body">
             <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre de la encuesta">
             <span *ngIf="form.get('nombre')?.hasError('required') && form.get('nombre')?.touched">
                 El campo nombre es <strong>requerido</strong>
@@ -14,36 +14,39 @@
             <span *ngIf="form.get('descripcion')?.hasError('required') && form.get('descripcion')?.touched">
                 El campo descripcion es <strong>requerido</strong>
             </span>
-
-            <input formControlName="cantPreg" type="number" class="form-control mt-2" placeholder="Ingrese cantidad de preguntas">
-            <span *ngIf="form.get('cantPreg')?.hasError('required') && form.get('cantPreg')?.touched">
-                Este campo es <strong>requerido</strong>
-            </span>
-            <span *ngIf="form.get('cantPreg')?.hasError('min')">
-                Debe ser mayor o igual a 1.
-            </span>
-            <span *ngIf="form.get('cantPreg')?.hasError('max')">
-                Debe ser menor o igual a 10.
-            </span>
-
             <hr>
-            <input formControlName="pregunta" type="text" class="form-control" placeholder="Pregunta 1">
+
+            <input formControlName="preg1" type="text" class="form-control" placeholder="Pregunta 1">
             <!-- <span *ngIf="form.get('pregunta')?.hasError('required') && form.get('pregunta')?.touched">
                 El campo nombre es <strong>requerido</strong>
             </span> -->
             <br>
-            <input formControlName="pregunta" type="text" class="form-control" placeholder="Pregunta 2">
-            <br>
-            <input formControlName="pregunta" type="text" class="form-control" placeholder="Pregunta 3">
+
+            <input formControlName="preg2" type="text" class="form-control mt-2" placeholder="Pregunta 2">
             <br>
 
-            <input formControlName="pregunta" type="text" class="form-control" placeholder="Pregunta 4">
+            <input formControlName="preg3" type="text" class="form-control mt-2" placeholder="Pregunta 3">
             <br>
 
-            <input formControlName="pregunta" type="text" class="form-control" placeholder="Pregunta 5">
+            <input formControlName="preg4" type="text" class="form-control mt-2" placeholder="Pregunta 4">
             <br>
 
-            <input formControlName="pregunta" type="text" class="form-control" placeholder="Pregunta 6">
+            <input formControlName="preg5" type="text" class="form-control mt-2" placeholder="Pregunta 5">
+            <br>
+
+            <input formControlName="preg6" type="text" class="form-control mt-2" placeholder="Pregunta 6">
+            <br>
+
+            <input formControlName="preg7" type="text" class="form-control mt-2" placeholder="Pregunta 7">
+            <br>
+
+            <input formControlName="preg8" type="text" class="form-control mt-2" placeholder="Pregunta 8">
+            <br>
+
+            <input formControlName="preg9" type="text" class="form-control mt-2" placeholder="Pregunta 9">
+            <br>
+
+            <input formControlName="preg10" type="text" class="form-control mt-2" placeholder="Pregunta 10">
             <br>
             
             <div class="row mt-2 text-center">
@@ -56,8 +59,4 @@
             </div>
         </form>
     </div>
-   
-
-
-
 </div>

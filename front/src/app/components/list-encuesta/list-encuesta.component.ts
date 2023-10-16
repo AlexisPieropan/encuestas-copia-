@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
 import { Encuesta } from 'src/app/interfaces/encuesta';
 import { EncuestaService } from 'src/app/services/encuesta.service';
-// import Swal from 'sweetalert2'
 import Swal from 'sweetalert2/dist/sweetalert2.js';
-
 
 @Component({
   selector: 'app-list-encuesta',
@@ -16,10 +13,10 @@ export class ListEncuestaComponent implements OnInit {
   loading: boolean = false;
 
 
-  constructor(private _encuestaService: EncuestaService, private toastr: ToastrService) { }
+  constructor(private _encuestaService: EncuestaService) { }
 
   ngOnInit(): void {
-    this.getListEncuestas();
+    this.getListEncuestas();  
   }
 
   //FUNCION QUE RECUPERA EL LISTADO DE ENCUESTAS 
