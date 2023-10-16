@@ -23,10 +23,16 @@ export class SurveyComponent {
   constructor(private _encuestaService: EncuestaService, private _route: ActivatedRoute,) { }
 
   encuestaRespuestas: any = {
-    hospedaje: '',
-    tiempoEstadia: '',
-    excursiones: [],
-    comentarios: ''
+    resp1: '',
+    resp2: '',
+    resp3: '',
+    resp4: '',
+    resp5: '',
+    resp6: '',
+    resp7: '',
+    resp8: '',
+    resp9: '',
+    resp10: '',
   };
 
   ngOnInit(): void {
