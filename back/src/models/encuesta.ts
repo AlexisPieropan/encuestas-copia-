@@ -1,6 +1,6 @@
 import { DataTypes } from 'sequelize';
 import db from '../db/connection';
-import Pregunta from './pregunta';
+
 
 const Encuesta = db.define('Encuesta', {
     nombre: {
@@ -9,15 +9,42 @@ const Encuesta = db.define('Encuesta', {
     descripcion: {
         type: DataTypes.STRING
     },
-    cantPreg: {
-        type: DataTypes.INTEGER
+    preg1: {
+        type: DataTypes.STRING
+    },
+    preg2: {
+        type: DataTypes.STRING
+    },
+    preg3: {
+        type: DataTypes.STRING
+    },
+    preg4: {
+        type: DataTypes.STRING
+    },
+    preg5: {
+        type: DataTypes.STRING
+    },
+    preg6: {
+        type: DataTypes.STRING
+    },
+    preg7: {
+        type: DataTypes.STRING
+    },
+    preg8: {
+        type: DataTypes.STRING
+    },
+    preg9: {
+        type: DataTypes.STRING
+    },
+    preg10: {
+        type: DataTypes.STRING
     }
+    
 }, {
     createdAt: false,
     updatedAt: false
 });
 
-//SE INDICA QUE UNA ENCUESTA TIENE VARIAS PREGUNTAS
-Encuesta.hasMany(Pregunta);
+
 
 export default Encuesta;
