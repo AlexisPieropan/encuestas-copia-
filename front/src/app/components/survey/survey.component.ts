@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
+import Swal from 'sweetalert2';
 
 import { FormsModule } from '@angular/forms';
 
@@ -20,12 +20,21 @@ export class SurveyComponent {
     excursiones: [],
     comentarios: ''
   };
-  constructor(private toastr: ToastrService) {}
 
   submitEncuesta() {
     // ver respuesta en objeto
     console.log('Respuestas enviadas:', this.encuestaRespuestas);
-    this.toastr.success('Encuesta enviada! Muchas gracias.');
+    Swal.fire({
+      text: 'Encuesta enviada! Muchas gracias.',
+      icon: 'success',
+      background: '#1a891afa',
+      color: 'white',
+      // toast: true,
+      // position: 'bottom-end',  
+      timer: 2000,
+      timerProgressBar: true,
+      showConfirmButton: false,
+    })
   }
 
   limpiarCampos() {
@@ -35,6 +44,16 @@ export class SurveyComponent {
       excursiones: [],
       comentarios: ''
     };
-    this.toastr.info('Campos resetados');
+    Swal.fire({
+      text: 'Campos resetados.',
+      icon: 'info',
+      background: '#337ab7',
+      color: 'white',
+      toast: true,
+      position: 'bottom-end',
+      timer: 2000,
+      timerProgressBar: true,
+      showConfirmButton: false,
+    })
   }
 }

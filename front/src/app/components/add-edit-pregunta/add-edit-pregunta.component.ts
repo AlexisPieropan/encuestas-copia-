@@ -55,11 +55,11 @@ export class AddEditPreguntaComponent implements OnInit {
     })
   }
 
-  addEncuesta() {
+  addPregunta() {
     /*  console.log(this.form.value.name);
      console.log(this.form.get('name')?.value); */
 
-    const encuesta: Pregunta = {
+    const pregunta: Pregunta = {
       texto: this.formP.value.texto,
       tipo: this.formP.value.tipo,
       tipoResp: this.formP.value.tipoResp
@@ -68,12 +68,12 @@ export class AddEditPreguntaComponent implements OnInit {
 
     if (this.id !== 0) {
       // Es editar 
-      encuesta.id = this.id;
-      this._preguntaService.updatePregunta(this.id, encuesta).subscribe(() => {
+      pregunta.id = this.id;
+      this._preguntaService.updatePregunta(this.id, pregunta).subscribe(() => {
 
 
         Swal.fire({
-          text: `La encuesta ${encuesta.texto} fue actualizada con exito`,
+          text: `La pregunta ${pregunta.texto} fue actualizada con exito`,
           icon: 'success',
           background: '#1a891afa',
           color: 'white',
@@ -91,11 +91,11 @@ export class AddEditPreguntaComponent implements OnInit {
 
     } else {
       // Es agregagar
-      this._preguntaService.savePregunta(encuesta).subscribe(() => {
+      this._preguntaService.savePregunta(pregunta).subscribe(() => {
 
 
         Swal.fire({
-          text: `La encuesta ${encuesta.texto} fue registrada con exito`,
+          text: `La pregunta ${pregunta.texto} fue registrada con exito`,
           icon: 'success',
           background: '#1a891afa',
           color: 'white',

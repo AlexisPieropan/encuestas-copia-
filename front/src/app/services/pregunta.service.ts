@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
-import { Pregunta } from '../interfaces/pregunta'; //se importa el servicio encuesta 
+import { Pregunta } from '../interfaces/pregunta'; //se importa el servicio pregunta
 
 @Injectable({
   providedIn: 'root'

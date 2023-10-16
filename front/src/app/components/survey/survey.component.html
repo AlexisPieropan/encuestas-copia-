@@ -5,13 +5,27 @@
   </div>
   <div class="table table-hover">
     <form class="card-body " (ngSubmit)="submitEncuesta()">
+      <div>
+        <h2 class="text-center">nombre de la encuesta</h2>
+        <h4 class="text-center">descripcion de la encuesta</h4>
+      </div>
       
       <div class="md-form form-group mt-3">
         <label for="hospedaje">¿Dónde se hospedó durante su viaje?</label>
         <input type="text" id="hospedaje" class="form-control" name="hospedaje" [(ngModel)]="encuestaRespuestas.hospedaje" />
       </div>
 
-      <div>
+      <div class="md-form form-group mt-3">
+        <label for="hospedaje">¿Que atracciones visitó durante su estadía?</label>
+        <input type="text" id="hospedaje" class="form-control" name="hospedaje" [(ngModel)]="encuestaRespuestas.hospedaje" />
+      </div>
+
+      <div class="md-form form-group mt-3">
+        <label for="hospedaje">¿Como calificaría el estado general de la ciudad? </label>
+        <input type="text" id="hospedaje" class="form-control" name="hospedaje" [(ngModel)]="encuestaRespuestas.hospedaje" />
+      </div>
+
+      <!-- <div>
         <br>
         <label>¿Cuánto tiempo planeó su estadía?</label>
         <select class="form-control" name="tiempoEstadia" [(ngModel)]="encuestaRespuestas.tiempoEstadia">
@@ -20,7 +34,7 @@
           <option value="Más de una semana">Más de una semana</option>
         </select>
       </div>
-      <br>
+      <br> -->
 
       <div>
         <label>¿Participó en alguna excursión?</label>

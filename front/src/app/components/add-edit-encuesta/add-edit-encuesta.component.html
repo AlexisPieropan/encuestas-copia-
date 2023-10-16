@@ -5,7 +5,7 @@
     </div>
         
     <div class="table table-hover">
-        <form [formGroup]="form" (ngSubmit)="addEncuesta()" class="card-body">
+        <form [formGroup]="form" (ngSubmit)="addEncuesta()"  class="card-body">
             <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre de la encuesta">
             <span *ngIf="form.get('nombre')?.hasError('required') && form.get('nombre')?.touched">
                 El campo nombre es <strong>requerido</strong>
@@ -25,6 +25,26 @@
             <span *ngIf="form.get('cantPreg')?.hasError('max')">
                 Debe ser menor o igual a 10.
             </span>
+
+            <hr>
+            <input formControlName="pregunta" type="text" class="form-control" placeholder="Pregunta 1">
+            <!-- <span *ngIf="form.get('pregunta')?.hasError('required') && form.get('pregunta')?.touched">
+                El campo nombre es <strong>requerido</strong>
+            </span> -->
+            <br>
+            <input formControlName="pregunta" type="text" class="form-control" placeholder="Pregunta 2">
+            <br>
+            <input formControlName="pregunta" type="text" class="form-control" placeholder="Pregunta 3">
+            <br>
+
+            <input formControlName="pregunta" type="text" class="form-control" placeholder="Pregunta 4">
+            <br>
+
+            <input formControlName="pregunta" type="text" class="form-control" placeholder="Pregunta 5">
+            <br>
+
+            <input formControlName="pregunta" type="text" class="form-control" placeholder="Pregunta 6">
+            <br>
             
             <div class="row mt-2 text-center">
                 <div class="col-lg-6">
@@ -36,4 +56,8 @@
             </div>
         </form>
     </div>
+   
+
+
+
 </div>
