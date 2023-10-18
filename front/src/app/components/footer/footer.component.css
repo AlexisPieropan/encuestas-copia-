@@ -1,3 +1,21 @@
 footer{
     background-color: #212124;
 }
+
+.socialIcon {
+    font-size: 20px;
+}
+
+.socialIcon:hover{
+    transition: all 0.5s ease;
+    color: #337ab7; 
+}
+
+a{
+    text-decoration: none;
+}
+
+.link:hover{
+    transition: all 0.5s ease;
+    color: #337ab7; 
+}
