@@ -19,6 +19,7 @@ import { MatFormFieldModule } from '@angular/material';
 import { FooterComponent } from './components/footer/footer.component';
 import { AddEditEncuestaComponent } from './components/add-edit-encuesta/add-edit-encuesta.component';
 import { ListEncuestaComponent } from './components/list-encuesta/list-encuesta.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { ListEncuestaComponent } from './components/list-encuesta/list-encuesta.
     FooterComponent,
     AddEditEncuestaComponent,
     ListEncuestaComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,12 +6,14 @@ import { SurveyComponent } from './components/survey/survey.component';
 import { LoginComponent } from './components/login/login.component';
 import { ListEncuestaComponent } from './components/list-encuesta/list-encuesta.component';
 import { AddEditEncuestaComponent } from './components/add-edit-encuesta/add-edit-encuesta.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: 'main', component: ListEncuestaComponent, data: { showHeader: true, showFooter: true }  },
   { path: 'add', component: AddEditEncuestaComponent, data: { showHeader: true, showFooter: true }   },
   { path: 'edit/:id', component: AddEditEncuestaComponent, data: { showHeader: true, showFooter: true }   },
   { path: 'survey/:id', component: SurveyComponent, data: { showHeader: true, showFooter: true }   },
+  { path: 'dashboard', component: DashboardComponent, data: { showHeader: true, showFooter: true }   },
   { path: '', component: LoginComponent, data: { showHeader: true, showFooter: false } },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 

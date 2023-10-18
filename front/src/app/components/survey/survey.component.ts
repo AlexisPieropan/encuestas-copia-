@@ -19,8 +19,32 @@ export class SurveyComponent {
 
   loading: boolean = false;
   currentEncuesta: any = {};
+  valorRecuperado = localStorage.getItem('tipoRespuestas');
+  valorRecuperado2 = localStorage.getItem('tipoRespuestas2');
   
-  constructor(private _encuestaService: EncuestaService, private _route: ActivatedRoute,) { }
+  //!!CONSTRUCTOR VACIO INICIALMENTE
+  constructor(private _encuestaService: EncuestaService, private _route: ActivatedRoute,) {
+
+    //variables que recuperan el tipo de respuestas que se cargaron en el componente de "agrega encuesta"
+    const valorRecuperado = localStorage.getItem('tipoRespuestas');
+    const valorRecuperado2 = localStorage.getItem('tipoRespuestas2');
+
+  if (valorRecuperado) {
+    // Realiza alguna lógica con el valor recuperado
+    console.log('Valor recuperado 1:', valorRecuperado);
+  } else {
+    console.log('La clave "tipoRespuestas" no existe en localStorage.');
+  } 
+  if (valorRecuperado2) {
+    // Realiza alguna lógica con el valor recuperado
+    console.log('Valor recuperado 2:', valorRecuperado2);
+  } else {
+    console.log('La clave "tipoRespuestas" no existe en localStorage.');
+  } 
+
+}
+
+  
 
   encuestaRespuestas: any = {
     resp1: '',
@@ -33,6 +57,7 @@ export class SurveyComponent {
     resp8: '',
     resp9: '',
     resp10: '',
+
   };
 
   ngOnInit(): void {

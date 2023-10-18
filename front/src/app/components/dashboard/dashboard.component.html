@@ -1,0 +1,64 @@
+<div class="container mt-4">
+  <h2 class="mb-4">Dashboard</h2>
+
+  <div class="row">
+    <div class="col-3">
+      <button class="btn btn-primary" (click)="registrarRespuesta('Si')">Sí</button>
+    </div>
+    <div class="col-3">
+      <button class="btn btn-danger" (click)="registrarRespuesta('No')">No</button>
+    </div>
+    <div class="col-3">
+      <div class="btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-info" (click)="registrarRespuesta('1')">
+          <input type="radio" name="options" id="option1" autocomplete="off"> 1
+        </label>
+        <label class="btn btn-info" (click)="registrarRespuesta('2')">
+          <input type="radio" name="options" id="option2" autocomplete="off"> 2
+        </label>
+        <label class="btn btn-info" (click)="registrarRespuesta('3')">
+          <input type="radio" name="options" id="option3" autocomplete="off"> 3
+        </label>
+        <label class="btn btn-info" (click)="registrarRespuesta('4')">
+          <input type="radio" name="options" id="option4" autocomplete="off"> 4
+        </label>
+        <label class="btn btn-info" (click)="registrarRespuesta('5')">
+          <input type="radio" name="options" id="option5" autocomplete="off"> 5
+        </label>
+      </div>
+    </div>
+    
+    <div class="col-3">
+      <div class="btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-warning" (click)="registrarRespuesta('6')">
+          <input type="radio" name="options" id="option6" autocomplete="off"> 6
+        </label>
+        <label class="btn btn-warning" (click)="registrarRespuesta('7')">
+          <input type="radio" name="options" id="option7" autocomplete="off"> 7
+        </label>
+        <label class="btn btn-warning" (click)="registrarRespuesta('8')">
+          <input type="radio" name="options" id="option8" autocomplete="off"> 8
+        </label>
+        <label class="btn btn-warning" (click)="registrarRespuesta('9')">
+          <input type="radio" name="options" id="option9" autocomplete="off"> 9
+        </label>
+        <label class="btn btn-warning" (click)="registrarRespuesta('10')">
+          <input type="radio" name="options" id="option10" autocomplete="off"> 10
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="mt-4">Métricas:</h3>
+  <p>Respuestas "Sí": {{ metricaSi }}</p>
+  <p>Respuestas "No": {{ metricaNo }}</p>
+  <p>Respuestas "1 al 5": {{ metrica1al5 }}</p>
+  <p>Respuestas "1 al 10": {{ metrica1al10 }}</p>
+
+  <div class="card mt-4 bg-white">
+    <div class="card-body">
+      <h5 class="card-title" style="color: #000000;">Gráfico de Métricas</h5>
+      <canvas class="w-100" style="max-height: 1200px;" #metricasChart></canvas>
+    </div>
+  </div>
+</div>

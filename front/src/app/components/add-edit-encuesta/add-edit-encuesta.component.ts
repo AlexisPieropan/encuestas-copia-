@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 import { Encuesta } from 'src/app/interfaces/encuesta';
 import { EncuestaService } from 'src/app/services/encuesta.service';
@@ -12,21 +12,17 @@ import { EncuestaService } from 'src/app/services/encuesta.service';
   styleUrls: ['./add-edit-encuesta.component.css']
 })
 export class AddEditEncuestaComponent implements OnInit {
-
   form: FormGroup;
   loading: boolean = false;
   id: number;
   operacion: string = 'Agregar ';
-  
-  // arrayPreguntas: number[] = [1,2,3,4,5,6,7,8,9,10];
 
-
-  constructor(private fb: FormBuilder,
+  constructor(
+    private fb: FormBuilder,
     private _encuestaService: EncuestaService,
     private router: Router,
-    private aRouter: ActivatedRoute) {
-
-      
+    private aRouter: ActivatedRoute
+  ) {
     this.form = this.fb.group({
       nombre: ['', Validators.required],
       descripcion: ['', Validators.required],
@@ -40,22 +36,29 @@ export class AddEditEncuestaComponent implements OnInit {
       preg8: [''],
       preg9: [''],
       preg10: [''],
-
+      tipoRespuestas: ['si-no'], // Valor predeterminado, puedes cambiarlo
+      tipoRespuestas2: ['si-no'] // Valor predeterminado, puedes cambiarlo
     });
     this.id = Number(aRouter.snapshot.paramMap.get('id'));
+  }
 
-     }
-
-     //CONEXION CON EL BACK
   ngOnInit(): void {
-    
     if (this.id != 0) {
       // Es editar
       this.operacion = 'Editar ';
       this.getEncuesta(this.id);
     }
+
+    //!!SE PUEDE BORRAR
+    // Recuperar el valor de tipoRespuestas del localStorage si está almacenado
+    const tipoRespuestas = localStorage.getItem('tipoRespuestas');
+    if (tipoRespuestas) {
+      this.form.get('tipoRespuestas')?.setValue(tipoRespuestas);
+    }
+    //!!---------------------------------------------------------
   }
 
+  // ... (otras partes de tu componente)
   getEncuesta(id: number) {
     this.loading = true;
     this._encuestaService.getEncuesta(id).subscribe((data: Encuesta) => {
@@ -73,7 +76,8 @@ export class AddEditEncuestaComponent implements OnInit {
         preg8: data.preg8,
         preg9: data.preg9,
         preg10: data.preg10,
-
+        tipoRespuestas1: ['si-no'], // Valor predeterminado, donde se almacena el tipo de respuesta 
+        tipoRespuestas2: ['si-no'] // Valor predeterminado, donde se almacena el tipo de respuesta 
       })
     })
   }
@@ -134,5 +138,8 @@ export class AddEditEncuestaComponent implements OnInit {
         this.router.navigate(['/main']);
       })
     }
+localStorage.setItem('tipoRespuestas', this.form.get('tipoRespuestas')?.value); //SE ALMACENA EL TIPO DE RESPUESTA QUE SE SELECCIONO EN LOCAL STORAGE
+localStorage.setItem('tipoRespuestas2', this.form.get('tipoRespuestas2')?.value); //SE ALMACENA EL TIPO DE RESPUESTA QUE SE SELECCIONO EN LOCAL STORAGE
+
   }
 }

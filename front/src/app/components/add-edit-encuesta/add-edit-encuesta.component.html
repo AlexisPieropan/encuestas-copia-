@@ -16,39 +16,32 @@
             </span>
             <hr>
 
-            <input formControlName="preg1" type="text" class="form-control" placeholder="Pregunta 1">
-            <!-- <span *ngIf="form.get('pregunta')?.hasError('required') && form.get('pregunta')?.touched">
-                El campo nombre es <strong>requerido</strong>
-            </span> -->
-            <br>
-
-            <input formControlName="preg2" type="text" class="form-control mt-2" placeholder="Pregunta 2">
-            <br>
-
-            <input formControlName="preg3" type="text" class="form-control mt-2" placeholder="Pregunta 3">
-            <br>
-
-            <input formControlName="preg4" type="text" class="form-control mt-2" placeholder="Pregunta 4">
-            <br>
-
-            <input formControlName="preg5" type="text" class="form-control mt-2" placeholder="Pregunta 5">
-            <br>
-
-            <input formControlName="preg6" type="text" class="form-control mt-2" placeholder="Pregunta 6">
-            <br>
-
-            <input formControlName="preg7" type="text" class="form-control mt-2" placeholder="Pregunta 7">
-            <br>
-
-            <input formControlName="preg8" type="text" class="form-control mt-2" placeholder="Pregunta 8">
-            <br>
-
-            <input formControlName="preg9" type="text" class="form-control mt-2" placeholder="Pregunta 9">
-            <br>
-
-            <input formControlName="preg10" type="text" class="form-control mt-2" placeholder="Pregunta 10">
-            <br>
+           
             
+            <input formControlName="preg1" type="text" class="form-control" placeholder="Pregunta 1">
+            
+            <label for="">Tipo de respuesta:</label>
+            <select formControlName="tipoRespuestas" class="form-control bg-gradient" >
+                <option value="" disabled selected style="color: red;">Seleccione el tipo de respuesta:</option>
+                <option value="si-no" style="color: #000000;">Sí/No</option>
+                <option value="1-5" style="color: #000000;">1 al 5</option>
+                <option value="1-10" style="color: #000000;">1 al 10</option>
+            </select>
+            <br>
+            <br>
+
+            <input formControlName="preg2" type="text" class="form-control" placeholder="Pregunta 2">
+            
+            <label for="">Tipo de respuesta:</label>
+            <select formControlName="tipoRespuestas2" class="form-control bg-gradient" >
+                <option value="" disabled selected style="color: red;">Seleccione el tipo de respuesta:</option>
+                <option value="si-no" style="color: #000000;">Sí/No</option>
+                <option value="1-5" style="color: #000000;">1 al 5</option>
+                <option value="1-10" style="color: #000000;">1 al 10</option>
+            </select>
+            
+            <!-- Agrega más campos de pregunta aquí... -->
+
             <div class="row mt-2 text-center">
                 <div class="col-lg-6">
                     <button routerLink="/main" type="button" class="btn btn-secondary">Volver</button>
