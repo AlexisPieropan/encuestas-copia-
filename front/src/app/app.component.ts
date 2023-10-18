@@ -28,4 +28,6 @@ export class AppComponent {
   shouldShowFooter() {
     return this.showFooter;
   }
+
+
 }

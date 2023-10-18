@@ -37,7 +37,10 @@ export class AddEditEncuestaComponent implements OnInit {
       preg9: [''],
       preg10: [''],
       tipoRespuestas: ['si-no'], // Valor predeterminado, puedes cambiarlo
-      tipoRespuestas2: ['si-no'] // Valor predeterminado, puedes cambiarlo
+      tipoRespuestas2: ['si-no'], // Valor predeterminado, puedes cambiarlo
+      tipoRespuestas3: ['si-no'], // Valor predeterminado, puedes cambiarlo
+      tipoRespuestas4: ['si-no'], // Valor predeterminado, puedes cambiarlo
+      tipoRespuestas5: ['si-no'] // Valor predeterminado, puedes cambiarlo
     });
     this.id = Number(aRouter.snapshot.paramMap.get('id'));
   }
@@ -77,7 +80,10 @@ export class AddEditEncuestaComponent implements OnInit {
         preg9: data.preg9,
         preg10: data.preg10,
         tipoRespuestas1: ['si-no'], // Valor predeterminado, donde se almacena el tipo de respuesta 
-        tipoRespuestas2: ['si-no'] // Valor predeterminado, donde se almacena el tipo de respuesta 
+        tipoRespuestas2: ['si-no'], // Valor predeterminado, donde se almacena el tipo de respuesta
+        tipoRespuestas3: ['si-no'], // Valor predeterminado, donde se almacena el tipo de respuesta 
+        tipoRespuestas4: ['si-no'], // Valor predeterminado, donde se almacena el tipo de respuesta 
+        tipoRespuestas5: ['si-no'], // Valor predeterminado, donde se almacena el tipo de respuesta  
       })
     })
   }

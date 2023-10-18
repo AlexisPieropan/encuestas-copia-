@@ -14,263 +14,301 @@
 
         <!-- ----------------------------------------------------------------------------------------------------- -->
         <!-- VALORES DE SI y NO -->
-        <div class="form-check form-check-inline" *ngIf="valorRecuperado === 'si-no' ">
-    
-          <input
-          type="radio"
-          class="form-check-input"
-          id="respSi"
-          name="respuesta"
-          value="Si"
-          [(ngModel)]="encuestaRespuestas.respuesta"   
-          />                                        <!--    NO TOCAR  -->
-          <label class="form-check-label" for="respSi">Sí</label>
-          
-        </div>
-        
-        <div class="form-check form-check-inline" *ngIf="valorRecuperado === 'si-no' ">
-    
-          <input
-          type="radio"
-          class="form-check-input"
-          id="respNo"
-          name="respuesta"
-          value="No"
-          [(ngModel)]="encuestaRespuestas.respuesta"
-        />
-        <label class="form-check-label" for="respNo">No</label>
+
+        <div class="form-check form-check-inline" *ngIf="valorRecuperado === 'si-no'">
+          <div class="form-check form-check-inline" *ngFor="let option of [{ value: 'Si', label: 'Sí' }, { value: 'No', label: 'No' }]">
+            <input
+              type="radio"
+              class="form-check-input"
+              [id]="'resp' + option.value"
+              name="respuesta"
+              [value]="option.value"
+              [(ngModel)]="encuestaRespuestas.resp1"
+            />
+            <label class="form-check-label" [for]="'resp' + option.value">{{ option.label }}</label>
+          </div>
         </div>
 
         <!-- ----------------------------------------------------------------------------------------------------- -->
         <!-- VALORES DEL 1 AL 5 -->
 
         <div class="form-check form-check-inline" *ngIf="valorRecuperado === '1-5' ">
-          <input
-          type="radio"
-          class="form-check-input"
-          id="resp1"
-          name="respuesta"
-          value="1"
-          [(ngModel)]="encuestaRespuestas.respuesta"
-          />
-          <label class="form-check-label" for="resp1-5">1</label>
-        </div>
-
-        <div class="form-check form-check-inline" *ngIf="valorRecuperado === '1-5' ">
-          <input
-          type="radio"
-          class="form-check-input"
-          id="resp1"
-          name="respuesta"
-          value="2"
-          [(ngModel)]="encuestaRespuestas.respuesta"
-          />
-          <label class="form-check-label" for="resp1-5">2</label>
-        </div>
-
-        <div class="form-check form-check-inline" *ngIf="valorRecuperado === '1-5' ">
-          <input
-          type="radio"
-          class="form-check-input"
-          id="resp1"
-          name="respuesta"
-          value="3"
-          [(ngModel)]="encuestaRespuestas.respuesta"
-          />
-          <label class="form-check-label" for="resp1-5">3</label>
-        </div>
-
-        <div class="form-check form-check-inline" *ngIf="valorRecuperado === '1-5' ">
-          <input
-          type="radio"
-          class="form-check-input"
-          id="resp1"
-          name="respuesta"
-          value="4"
-          [(ngModel)]="encuestaRespuestas.respuesta"
-          />
-          <label class="form-check-label" for="resp1-5">4</label>
-        </div> 
-
-        <div class="form-check form-check-inline" *ngIf="valorRecuperado === '1-5' ">
-          <input
-          type="radio"
-          class="form-check-input"
-          id="resp1"
-          name="respuesta"
-          value="5"
-          [(ngModel)]="encuestaRespuestas.respuesta"
-          />
-          <label class="form-check-label" for="resp1-5">5</label>
+          <div class="form-check form-check-inline" *ngFor="let i of [1, 2, 3, 4, 5]">
+            <input
+              type="radio"
+              class="form-check-input"
+              [id]="'resp' + i"
+              name="respuesta"
+              [value]="i"
+              [(ngModel)]="encuestaRespuestas.resp1"
+            />
+            <label class="form-check-label" [for]="'resp' + i">{{ i }}</label>
+          </div>
         </div>
 
         <!-- ----------------------------------------------------------------------------------------------------- -->
-        <!-- VALORES DEL 1 AL 10 -->  
-        <div class="form-check form-check-inline" *ngIf="valorRecuperado === '1-10' ">  <!-- valida si esta dentro de este tipo de respuesta -->
-          <input
-          type="radio"
-          class="form-check-input"
-          id="resp1"
-          name="respuesta"
-          value="1"
-          [(ngModel)]="encuestaRespuestas.respuesta"
-          />
-          <label class="form-check-label" for="resp1-10">1</label>
-        </div>
-
-        <div class="form-check form-check-inline" *ngIf="valorRecuperado === '1-10' ">  
-          <input
-          type="radio"
-          class="form-check-input"
-          id="resp1"
-          name="respuesta"
-          value="2"
-          [(ngModel)]="encuestaRespuestas.respuesta"
-          />
-          <label class="form-check-label" for="resp1-10">2</label>
-        </div>
-
-        <div class="form-check form-check-inline" *ngIf="valorRecuperado === '1-10' ">  
-          <input
-          type="radio"
-          class="form-check-input"
-          id="resp1"
-          name="respuesta"
-          value="3"
-          [(ngModel)]="encuestaRespuestas.respuesta"
-          />
-          <label class="form-check-label" for="resp1-10">3</label>
-        </div>
-
-        <div class="form-check form-check-inline" *ngIf="valorRecuperado === '1-10' ">  
-          <input
-          type="radio"
-          class="form-check-input"
-          id="resp1"
-          name="respuesta"
-          value="4"
-          [(ngModel)]="encuestaRespuestas.respuesta"
-          />
-          <label class="form-check-label" for="resp1-10">4</label>
-        </div>
-
-        <div class="form-check form-check-inline" *ngIf="valorRecuperado === '1-10' ">  
-          <input
-          type="radio"
-          class="form-check-input"
-          id="resp1"
-          name="respuesta"
-          value="5"
-          [(ngModel)]="encuestaRespuestas.respuesta"
-          />
-          <label class="form-check-label" for="resp1-10">5</label>
-        </div>
-
-        <div class="form-check form-check-inline" *ngIf="valorRecuperado === '1-10' ">  
-          <input
-          type="radio"
-          class="form-check-input"
-          id="resp1"
-          name="respuesta"
-          value="6"
-          [(ngModel)]="encuestaRespuestas.respuesta"
-          />
-          <label class="form-check-label" for="resp1-10">6</label>
-        </div>
-
-        <div class="form-check form-check-inline" *ngIf="valorRecuperado === '1-10' ">  
-          <input
-          type="radio"
-          class="form-check-input"
-          id="resp1"
-          name="respuesta"
-          value="7"
-          [(ngModel)]="encuestaRespuestas.respuesta"
-          />
-          <label class="form-check-label" for="resp1-10">7</label>
-        </div>
-
-        <div class="form-check form-check-inline" *ngIf="valorRecuperado === '1-10' ">  
-          <input
-          type="radio"
-          class="form-check-input"
-          id="resp1"
-          name="respuesta"
-          value="8"
-          [(ngModel)]="encuestaRespuestas.respuesta"
-          />
-          <label class="form-check-label" for="resp1-10">8</label>
-        </div>
-
-        <div class="form-check form-check-inline" *ngIf="valorRecuperado === '1-10' ">  
-          <input
-          type="radio"
-          class="form-check-input"
-          id="resp1"
-          name="respuesta"
-          value="9"
-          [(ngModel)]="encuestaRespuestas.respuesta"
-          />
-          <label class="form-check-label" for="resp1-10">9</label>
-        </div>
+        <!-- VALORES DEL 1 AL 10 --> 
         
-        <div class="form-check form-check-inline" *ngIf="valorRecuperado === '1-10' ">  
-          <input
-          type="radio"
-          class="form-check-input"
-          id="resp1"
-          name="respuesta"
-          value="10"
-          [(ngModel)]="encuestaRespuestas.respuesta"
-          />
-          <label class="form-check-label" for="resp1-10">10</label>
+        <div class="form-check form-check-inline" *ngIf="valorRecuperado === '1-10' ">
+          <div class="form-check form-check-inline" *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
+            <input
+              type="radio"
+              class="form-check-input"
+              [id]="'resp' + i"
+              name="respuesta"
+              [value]="i"
+              [(ngModel)]="encuestaRespuestas.resp1"
+            />
+            <label class="form-check-label" [for]="'resp' + i">{{ i }}</label>
+          </div>
         </div>
-
-
-      </div>
-
-      <!-- ----------------------------------------------------------------------------------------------------- -->
-      
-
-      <div class="md-form form-group mt-3" *ngIf="currentEncuesta.preg2 !== '' ">    <!-- COMPRUEBA si existe algo cargado y pinta la pregunta --> 
-        <label for="resp3">{{ currentEncuesta.preg2 }}</label>
-        <input type="text" id="resp3" class="form-control" name="resp2" [(ngModel)]="encuestaRespuestas.resp3" />
       </div>
 
 
 
-      
-     
-
-      <!-- <div>
+      <!--PREGUNTA 2-->
+      <div class="md-form form-group mt-3" *ngIf="currentEncuesta.preg2 !== '' "> <!-- COMPRUEBA si existe algo cargado y pinta la pregunta --> 
+        <label for="resp2">{{ currentEncuesta.preg2 }}</label>
         <br>
-        <label>¿Cuánto tiempo planeó su estadía?</label>
-        <select class="form-control" name="tiempoEstadia" [(ngModel)]="encuestaRespuestas.tiempoEstadia">
-          <option value="1-3 días">1-3 días</option>
-          <option value="4-7 días">4-7 días</option>
-          <option value="Más de una semana">Más de una semana</option>
-        </select>
+   <!-- ----------------------------------------------------------------------------------------------------- -->
+        <!-- VALORES DE SI y NO -->
+
+        <div class="form-check form-check-inline" *ngIf="valorRecuperado === 'si-no'">
+          <div class="form-check form-check-inline" *ngFor="let option of [{ value2: 'Si', label2: 'Sí' }, { value2: 'No', label2: 'No' }]">
+            <input
+              type="radio"
+              class="form-check-input"
+              [id]="'resp2' + option.value2"
+              name="respuesta2"
+              [value]="option.value2"
+              [(ngModel)]="encuestaRespuestas.resp2"
+            />
+            <label class="form-check-label" [for]="'resp2' + option.value2">{{ option.label2 }}</label>
+          </div>
+        </div>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+        <!-- VALORES DEL 1 AL 5 -->
+
+        <div class="form-check form-check-inline" *ngIf="valorRecuperado === '1-5' ">
+          <div class="form-check form-check-inline" *ngFor="let i of [1, 2, 3, 4, 5]">
+            <input
+              type="radio"
+              class="form-check-input"
+              [id]="'resp2' + i"
+              name="respuesta2"
+              [value]="i"
+              [(ngModel)]="encuestaRespuestas.resp2"
+            />
+            <label class="form-check-label" [for]="'resp2' + i">{{ i }}</label>
+          </div>
+        </div>
+
+        <!-- ----------------------------------------------------------------------------------------------------- -->
+        <!-- VALORES DEL 1 AL 10 --> 
+        
+        <div class="form-check form-check-inline" *ngIf="valorRecuperado === '1-10' ">
+          <div class="form-check form-check-inline" *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
+            <input
+              type="radio"
+              class="form-check-input"
+              [id]="'resp2' + i"
+              name="respuesta2"
+              [value]="i"
+              [(ngModel)]="encuestaRespuestas.resp2"
+            />
+            <label class="form-check-label" [for]="'resp2' + i">{{ i }}</label>
+          </div>
+        </div>
       </div>
+
+
+         <!--PREGUNTA 3-->
+      <div class="md-form form-group mt-3" *ngIf="currentEncuesta.preg3 !== '' "> <!-- COMPRUEBA si existe algo cargado y pinta la pregunta --> 
+        <label for="resp3">{{ currentEncuesta.preg3 }}</label>
       <br>
 
-      <div>
-        <label>¿Participó en alguna excursión?</label>
-        <div>
-          <input type="checkbox" name="excursiones1" value="Excursión a la playa" [(ngModel)]="encuestaRespuestas.excursiones1" /> Excursión a la playa
+   <!-- ----------------------------------------------------------------------------------------------------- -->
+        <!-- VALORES DE SI y NO -->
+
+        <div class="form-check form-check-inline" *ngIf="valorRecuperado === 'si-no'">
+          <div class="form-check form-check-inline" *ngFor="let option of [{ value3: 'Si', label3: 'Sí' }, { value3: 'No', label3: 'No' }]">
+            <input
+              type="radio"
+              class="form-check-input"
+              [id]="'resp3' + option.value3"
+              name="respuesta3"
+              [value]="option.value3"
+              [(ngModel)]="encuestaRespuestas.resp3"
+            />
+            <label class="form-check-label" [for]="'resp3' + option.value3">{{ option.label3 }}</label>
+          </div>
         </div>
-        <div>
-          <input type="checkbox" name="excursiones" value="Excursión a montañas" [(ngModel)]="encuestaRespuestas.excursiones" /> Excursión a montañas
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+        <!-- VALORES DEL 1 AL 5 -->
+
+        <div class="form-check form-check-inline" *ngIf="valorRecuperado === '1-5' ">
+          <div class="form-check form-check-inline" *ngFor="let i of [1, 2, 3, 4, 5]">
+            <input
+              type="radio"
+              class="form-check-input"
+              [id]="'resp3' + i"
+              name="respuesta3"
+              [value]="i"
+              [(ngModel)]="encuestaRespuestas.resp3"
+            />
+            <label class="form-check-label" [for]="'resp3' + i">{{ i }}</label>
+          </div>
         </div>
+
+        <!-- ----------------------------------------------------------------------------------------------------- -->
+        <!-- VALORES DEL 1 AL 10 --> 
+        
+        <div class="form-check form-check-inline" *ngIf="valorRecuperado === '1-10' ">
+          <div class="form-check form-check-inline" *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
+            <input
+              type="radio"
+              class="form-check-input"
+              [id]="'resp3' + i"
+              name="respuesta3"
+              [value]="i"
+              [(ngModel)]="encuestaRespuestas.resp3"
+            />
+            <label class="form-check-label" [for]="'resp3' + i">{{ i }}</label>
+          </div>
+        </div>
+        </div>
+      
+
+
+      <!--PREGUNTA 4-->
+      <div class="md-form form-group mt-3" *ngIf="currentEncuesta.preg4 !== '' "> <!-- COMPRUEBA si existe algo cargado y pinta la pregunta --> 
+        <label for="resp4">{{ currentEncuesta.preg4 }}</label>
       </div>
+
+   <!-- ----------------------------------------------------------------------------------------------------- -->
+        <!-- VALORES DE SI y NO -->
+
+        <div class="form-check form-check-inline" *ngIf="valorRecuperado === 'si-no'">
+          <div class="form-check form-check-inline" *ngFor="let option of [{ value4: 'Si', label4: 'Sí' }, { value4: 'No', label4: 'No' }]">
+            <input
+              type="radio"
+              class="form-check-input"
+              [id]="'resp4' + option.value4"
+              name="respuesta4"
+              [value]="option.value4"
+              [(ngModel)]="encuestaRespuestas.resp4"
+            />
+            <label class="form-check-label" [for]="'resp2' + option.value4">{{ option.label4 }}</label>
+          </div>
+        </div>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+        <!-- VALORES DEL 1 AL 5 -->
+
+        <div class="form-check form-check-inline" *ngIf="valorRecuperado === '1-5' ">
+          <div class="form-check form-check-inline" *ngFor="let i of [1, 2, 3, 4, 5]">
+            <input
+              type="radio"
+              class="form-check-input"
+              [id]="'resp4' + i"
+              name="respuesta4"
+              [value]="i"
+              [(ngModel)]="encuestaRespuestas.resp4"
+            />
+            <label class="form-check-label" [for]="'resp4' + i">{{ i }}</label>
+          </div>
+        </div>
+
+        <!-- ----------------------------------------------------------------------------------------------------- -->
+        <!-- VALORES DEL 1 AL 10 --> 
+        
+        <div class="form-check form-check-inline" *ngIf="valorRecuperado === '1-10' ">
+          <div class="form-check form-check-inline" *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
+            <input
+              type="radio"
+              class="form-check-input"
+              [id]="'resp4' + i"
+              name="respuesta4"
+              [value]="i"
+              [(ngModel)]="encuestaRespuestas.resp4"
+            />
+            <label class="form-check-label" [for]="'resp4' + i">{{ i }}</label>
+          </div>
+        </div>
+
+
+
+      <!--PREGUNTA 5-->
+      <div class="md-form form-group mt-3" *ngIf="currentEncuesta.preg5 !== '' "> <!-- COMPRUEBA si existe algo cargado y pinta la pregunta --> 
+        <label for="resp5">{{ currentEncuesta.preg5 }}</label>
+      </div>
+
+   <!-- ----------------------------------------------------------------------------------------------------- -->
+        <!-- VALORES DE SI y NO -->
+
+        <div class="form-check form-check-inline" *ngIf="valorRecuperado === 'si-no'">
+          <div class="form-check form-check-inline" *ngFor="let option of [{ value5: 'Si', label5: 'Sí' }, { value5: 'No', label5: 'No' }]">
+            <input
+              type="radio"
+              class="form-check-input"
+              [id]="'resp5' + option.value5"
+              name="respuesta5"
+              [value]="option.value5"
+              [(ngModel)]="encuestaRespuestas.resp5"
+            />
+            <label class="form-check-label" [for]="'resp2' + option.value5">{{ option.label5 }}</label>
+          </div>
+        </div>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+        <!-- VALORES DEL 1 AL 5 -->
+
+        <div class="form-check form-check-inline" *ngIf="valorRecuperado === '1-5' ">
+          <div class="form-check form-check-inline" *ngFor="let i of [1, 2, 3, 4, 5]">
+            <input
+              type="radio"
+              class="form-check-input"
+              [id]="'resp5' + i"
+              name="respuesta5"
+              [value]="i"
+              [(ngModel)]="encuestaRespuestas.resp5"
+            />
+            <label class="form-check-label" [for]="'resp5' + i">{{ i }}</label>
+          </div>
+        </div>
+
+        <!-- ----------------------------------------------------------------------------------------------------- -->
+        <!-- VALORES DEL 1 AL 10 --> 
+        
+        <div class="form-check form-check-inline" *ngIf="valorRecuperado === '1-10' ">
+          <div class="form-check form-check-inline" *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
+            <input
+              type="radio"
+              class="form-check-input"
+              [id]="'resp5' + i"
+              name="respuesta5"
+              [value]="i"
+              [(ngModel)]="encuestaRespuestas.resp5"
+            />
+            <label class="form-check-label" [for]="'resp5' + i">{{ i }}</label>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
       <br>
 
-      <div>
-        <label for="comentarios">Comentarios adicionales</label>
-        <div>
-          <textarea id="comentarios" name="comentarios" [(ngModel)]="encuestaRespuestas.comentarios"></textarea>
-        </div>
-      </div>
-      <br> -->
+
+
 
       <div class="btn_survey">
         <div>

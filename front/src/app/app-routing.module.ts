@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'edit/:id', component: AddEditEncuestaComponent, data: { showHeader: true, showFooter: true }   },
   { path: 'survey/:id', component: SurveyComponent, data: { showHeader: true, showFooter: true }   },
   { path: 'dashboard', component: DashboardComponent, data: { showHeader: true, showFooter: true }   },
-  { path: '', component: LoginComponent, data: { showHeader: true, showFooter: false } },
+  { path: '', component: LoginComponent, data: { showHeader: false, showFooter: false } },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 
 ];
