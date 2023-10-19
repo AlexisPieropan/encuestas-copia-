@@ -23,23 +23,7 @@ const Encuesta = db.define('Encuesta', {
     },
     preg5: {
         type: DataTypes.STRING
-    },
-    preg6: {
-        type: DataTypes.STRING
-    },
-    preg7: {
-        type: DataTypes.STRING
-    },
-    preg8: {
-        type: DataTypes.STRING
-    },
-    preg9: {
-        type: DataTypes.STRING
-    },
-    preg10: {
-        type: DataTypes.STRING
     }
-    
 }, {
     createdAt: false,
     updatedAt: false

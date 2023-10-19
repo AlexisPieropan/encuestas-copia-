@@ -22,7 +22,7 @@
           id="respSi"
           name="respuesta"
           value="Si"
-          [(ngModel)]="encuestaRespuestas.respuesta"   
+          [(ngModel)]="encuestaRespuestas.resp1"   
           />                                        <!--    NO TOCAR  -->
           <label class="form-check-label" for="respSi">Sí</label>
           
@@ -36,7 +36,7 @@
           id="respNo"
           name="respuesta"
           value="No"
-          [(ngModel)]="encuestaRespuestas.respuesta"
+          [(ngModel)]="encuestaRespuestas.resp1"
         />
         <label class="form-check-label" for="respNo">No</label>
         </div>
@@ -51,7 +51,7 @@
           id="resp1"
           name="respuesta"
           value="1"
-          [(ngModel)]="encuestaRespuestas.respuesta"
+          [(ngModel)]="encuestaRespuestas.resp1"
           />
           <label class="form-check-label" for="resp1-5">1</label>
         </div>
@@ -63,7 +63,7 @@
           id="resp1"
           name="respuesta"
           value="2"
-          [(ngModel)]="encuestaRespuestas.respuesta"
+          [(ngModel)]="encuestaRespuestas.resp1"
           />
           <label class="form-check-label" for="resp1-5">2</label>
         </div>
@@ -75,7 +75,7 @@
           id="resp1"
           name="respuesta"
           value="3"
-          [(ngModel)]="encuestaRespuestas.respuesta"
+          [(ngModel)]="encuestaRespuestas.resp1"
           />
           <label class="form-check-label" for="resp1-5">3</label>
         </div>
@@ -87,7 +87,7 @@
           id="resp1"
           name="respuesta"
           value="4"
-          [(ngModel)]="encuestaRespuestas.respuesta"
+          [(ngModel)]="encuestaRespuestas.resp1"
           />
           <label class="form-check-label" for="resp1-5">4</label>
         </div> 
@@ -99,7 +99,7 @@
           id="resp1"
           name="respuesta"
           value="5"
-          [(ngModel)]="encuestaRespuestas.respuesta"
+          [(ngModel)]="encuestaRespuestas.resp1"
           />
           <label class="form-check-label" for="resp1-5">5</label>
         </div>
@@ -113,7 +113,7 @@
           id="resp1"
           name="respuesta"
           value="1"
-          [(ngModel)]="encuestaRespuestas.respuesta"
+          [(ngModel)]="encuestaRespuestas.resp1"
           />
           <label class="form-check-label" for="resp1-10">1</label>
         </div>
@@ -125,7 +125,7 @@
           id="resp1"
           name="respuesta"
           value="2"
-          [(ngModel)]="encuestaRespuestas.respuesta"
+          [(ngModel)]="encuestaRespuestas.resp1"
           />
           <label class="form-check-label" for="resp1-10">2</label>
         </div>
@@ -137,7 +137,7 @@
           id="resp1"
           name="respuesta"
           value="3"
-          [(ngModel)]="encuestaRespuestas.respuesta"
+          [(ngModel)]="encuestaRespuestas.resp1"
           />
           <label class="form-check-label" for="resp1-10">3</label>
         </div>
@@ -149,7 +149,7 @@
           id="resp1"
           name="respuesta"
           value="4"
-          [(ngModel)]="encuestaRespuestas.respuesta"
+          [(ngModel)]="encuestaRespuestas.resp1"
           />
           <label class="form-check-label" for="resp1-10">4</label>
         </div>
@@ -161,7 +161,7 @@
           id="resp1"
           name="respuesta"
           value="5"
-          [(ngModel)]="encuestaRespuestas.respuesta"
+          [(ngModel)]="encuestaRespuestas.resp1"
           />
           <label class="form-check-label" for="resp1-10">5</label>
         </div>
@@ -173,7 +173,7 @@
           id="resp1"
           name="respuesta"
           value="6"
-          [(ngModel)]="encuestaRespuestas.respuesta"
+          [(ngModel)]="encuestaRespuestas.resp1"
           />
           <label class="form-check-label" for="resp1-10">6</label>
         </div>
@@ -185,7 +185,7 @@
           id="resp1"
           name="respuesta"
           value="7"
-          [(ngModel)]="encuestaRespuestas.respuesta"
+          [(ngModel)]="encuestaRespuestas.resp1"
           />
           <label class="form-check-label" for="resp1-10">7</label>
         </div>
@@ -197,7 +197,7 @@
           id="resp1"
           name="respuesta"
           value="8"
-          [(ngModel)]="encuestaRespuestas.respuesta"
+          [(ngModel)]="encuestaRespuestas.resp1"
           />
           <label class="form-check-label" for="resp1-10">8</label>
         </div>
@@ -209,7 +209,7 @@
           id="resp1"
           name="respuesta"
           value="9"
-          [(ngModel)]="encuestaRespuestas.respuesta"
+          [(ngModel)]="encuestaRespuestas.resp1"
           />
           <label class="form-check-label" for="resp1-10">9</label>
         </div>
@@ -221,7 +221,7 @@
           id="resp1"
           name="respuesta"
           value="10"
-          [(ngModel)]="encuestaRespuestas.respuesta"
+          [(ngModel)]="encuestaRespuestas.resp1"
           />
           <label class="form-check-label" for="resp1-10">10</label>
         </div>
@@ -233,9 +233,10 @@
       
 
       <div class="md-form form-group mt-3" *ngIf="currentEncuesta.preg2 !== '' ">    <!-- COMPRUEBA si existe algo cargado y pinta la pregunta --> 
-        <label for="resp3">{{ currentEncuesta.preg2 }}</label>
-        <input type="text" id="resp3" class="form-control" name="resp2" [(ngModel)]="encuestaRespuestas.resp3" />
+        <label for="resp2">{{ currentEncuesta.preg2 }}</label>
+        <input type="text" id="resp3" class="form-control" name="resp2" [(ngModel)]="encuestaRespuestas.resp2" />
       </div>
+     
 
 
 

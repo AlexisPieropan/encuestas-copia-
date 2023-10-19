@@ -19,14 +19,22 @@ export class SurveyComponent {
 
   loading: boolean = false;
   currentEncuesta: any = {};
-  valorRecuperado = localStorage.getItem('tipoRespuestas');
+  //VARIABLES QUE RECUPERAN el tipo de respuestas que se cargaron en el componente de "agrega encuesta" (SURVEY)
+  valorRecuperado = localStorage.getItem('tipoRespuestas1');
   valorRecuperado2 = localStorage.getItem('tipoRespuestas2');
+  valorRecuperado3 = localStorage.getItem('tipoRespuestas3');
+  valorRecuperado4 = localStorage.getItem('tipoRespuestas4');
+  valorRecuperado5 = localStorage.getItem('tipoRespuestas5');
+
+
   
+
   //!!CONSTRUCTOR VACIO INICIALMENTE
+  //!!ELIMINAR LAS LINEAS QUE ESTAN DENTRO 
   constructor(private _encuestaService: EncuestaService, private _route: ActivatedRoute,) {
 
-    //variables que recuperan el tipo de respuestas que se cargaron en el componente de "agrega encuesta"
-    const valorRecuperado = localStorage.getItem('tipoRespuestas');
+    
+    const valorRecuperado = localStorage.getItem('tipoRespuestas1');
     const valorRecuperado2 = localStorage.getItem('tipoRespuestas2');
 
   if (valorRecuperado) {
@@ -45,20 +53,25 @@ export class SurveyComponent {
 }
 
   
-
+//OBJETO QUE ALMACENA las respuestas 
   encuestaRespuestas: any = {
     resp1: '',
     resp2: '',
     resp3: '',
     resp4: '',
     resp5: '',
-    resp6: '',
-    resp7: '',
-    resp8: '',
-    resp9: '',
-    resp10: '',
-
   };
+
+    //ALMACENAR DEL OBJECT LA RESPUESTAS PARA RECUPERAR EN DASHBOARD CON LOCALSTORAGE:
+  // Para almacenar un atributo de 'encuestaRespuestas' en localStorage
+
+
+
+
+
+
+
+
 
   ngOnInit(): void {
     this.loading = true;

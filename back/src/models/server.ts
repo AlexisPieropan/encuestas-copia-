@@ -1,6 +1,6 @@
 import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
-import routesProducto from '../routes/encuesta';
+import routesEncuesta from '../routes/encuesta';
 import db from '../db/connection';
 
 class Server {
@@ -28,7 +28,7 @@ class Server {
                 msg: 'API LEVANTADA Y FUNCIONANDO'
             })
         })
-        this.app.use('/api/encuestas', routesProducto)
+        this.app.use('/api/encuestas', routesEncuesta)
     }
 
     midlewares() {

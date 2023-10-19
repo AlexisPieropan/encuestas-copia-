@@ -31,13 +31,11 @@ export class AddEditEncuestaComponent implements OnInit {
       preg3: [''],
       preg4: [''],
       preg5: [''],
-      preg6: [''],
-      preg7: [''],
-      preg8: [''],
-      preg9: [''],
-      preg10: [''],
-      tipoRespuestas: ['si-no'], // Valor predeterminado, puedes cambiarlo
-      tipoRespuestas2: ['si-no'] // Valor predeterminado, puedes cambiarlo
+      tipoRespuestas1: [''], // Valor predeterminado, puedes cambiarlo
+      tipoRespuestas2: [''], // Valor predeterminado, puedes cambiarlo
+      tipoRespuestas3: [''], // Valor predeterminado, puedes cambiarlo
+      tipoRespuestas4: [''], // Valor predeterminado, puedes cambiarlo
+      tipoRespuestas5: [''], // Valor predeterminado, puedes cambiarlo
     });
     this.id = Number(aRouter.snapshot.paramMap.get('id'));
   }
@@ -51,14 +49,14 @@ export class AddEditEncuestaComponent implements OnInit {
 
     //!!SE PUEDE BORRAR
     // Recuperar el valor de tipoRespuestas del localStorage si está almacenado
-    const tipoRespuestas = localStorage.getItem('tipoRespuestas');
-    if (tipoRespuestas) {
-      this.form.get('tipoRespuestas')?.setValue(tipoRespuestas);
+    const tipoRespuestas1 = localStorage.getItem('tipoRespuestas');
+    if (tipoRespuestas1) {
+      this.form.get('tipoRespuestas')?.setValue(tipoRespuestas1);
     }
     //!!---------------------------------------------------------
   }
 
-  // ... (otras partes de tu componente)
+  
   getEncuesta(id: number) {
     this.loading = true;
     this._encuestaService.getEncuesta(id).subscribe((data: Encuesta) => {
@@ -71,13 +69,11 @@ export class AddEditEncuestaComponent implements OnInit {
         preg3: data.preg3,
         preg4: data.preg4,
         preg5: data.preg5,
-        preg6: data.preg6,
-        preg7: data.preg7,
-        preg8: data.preg8,
-        preg9: data.preg9,
-        preg10: data.preg10,
-        tipoRespuestas1: ['si-no'], // Valor predeterminado, donde se almacena el tipo de respuesta 
-        tipoRespuestas2: ['si-no'] // Valor predeterminado, donde se almacena el tipo de respuesta 
+        tipoRespuestas1: [''], // Valor predeterminado, donde se almacena el tipo de respuesta 
+        tipoRespuestas2: [''], // Valor predeterminado, donde se almacena el tipo de respuesta 
+        tipoRespuestas3: [''], // Valor predeterminado, donde se almacena el tipo de respuesta 
+        tipoRespuestas4: [''], // Valor predeterminado, donde se almacena el tipo de respuesta 
+        tipoRespuestas5: [''] // Valor predeterminado, donde se almacena el tipo de respuesta 
       })
     })
   }
@@ -94,11 +90,6 @@ export class AddEditEncuestaComponent implements OnInit {
       preg3: this.form.value.preg3,
       preg4: this.form.value.preg4,
       preg5: this.form.value.preg5,
-      preg6: this.form.value.preg6,
-      preg7: this.form.value.preg7,
-      preg8: this.form.value.preg8,
-      preg9: this.form.value.preg9,
-      preg10: this.form.value.preg10,
     }
     this.loading = true;
 
@@ -138,8 +129,12 @@ export class AddEditEncuestaComponent implements OnInit {
         this.router.navigate(['/main']);
       })
     }
-localStorage.setItem('tipoRespuestas', this.form.get('tipoRespuestas')?.value); //SE ALMACENA EL TIPO DE RESPUESTA QUE SE SELECCIONO EN LOCAL STORAGE
+
+localStorage.setItem('tipoRespuestas1', this.form.get('tipoRespuestas1')?.value); //SE ALMACENA EL TIPO DE RESPUESTA QUE SE SELECCIONO EN LOCAL STORAGE
 localStorage.setItem('tipoRespuestas2', this.form.get('tipoRespuestas2')?.value); //SE ALMACENA EL TIPO DE RESPUESTA QUE SE SELECCIONO EN LOCAL STORAGE
+localStorage.setItem('tipoRespuestas3', this.form.get('tipoRespuestas3')?.value); //SE ALMACENA EL TIPO DE RESPUESTA QUE SE SELECCIONO EN LOCAL STORAGE
+localStorage.setItem('tipoRespuestas4', this.form.get('tipoRespuestas4')?.value); //SE ALMACENA EL TIPO DE RESPUESTA QUE SE SELECCIONO EN LOCAL STORAGE
+localStorage.setItem('tipoRespuestas5', this.form.get('tipoRespuestas5')?.value); //SE ALMACENA EL TIPO DE RESPUESTA QUE SE SELECCIONO EN LOCAL STORAGE
 
   }
 }
