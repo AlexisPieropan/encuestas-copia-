@@ -13,8 +13,8 @@ const routes: Routes = [
   { path: 'add', component: AddEditEncuestaComponent, data: { showHeader: true, showFooter: true }   },
   { path: 'edit/:id', component: AddEditEncuestaComponent, data: { showHeader: true, showFooter: true }   },
   { path: 'survey/:id', component: SurveyComponent, data: { showHeader: true, showFooter: true }   },
-  { path: 'dashboard/:id', component: DashboardComponent, data: { showHeader: true, showFooter: true }   }, //genera el dashboard de acuerdo al id
-  { path: '', component: LoginComponent, data: { showHeader: true, showFooter: false } },
+  { path: 'dashboard/:id', component: DashboardComponent, data: { showHeader: true, showFooter: true }   },
+  { path: '', component: LoginComponent, data: { showHeader: false, showFooter: false } },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 
 ];

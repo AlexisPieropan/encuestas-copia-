@@ -1,9 +1,15 @@
 .divImagen{
     background-image: url('https://www.cba.gov.ar/wp-content/uploads/2019/11/La-Toma-8.jpg');
     background-size: cover;
-    min-height: calc(100vh - 120px);
-    /* border-top-left-radius: 150px; */
-    /* clip-path: polygon(0 0, 100% 20%, 80% 100%, 0% 100%); */
+    min-height: 100vh;
     max-width: 100%;
     background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divLogin{
+    background-color: #3379b71d;
+    width: 350px;
+    height: 200px;
 }

@@ -20,40 +20,29 @@ export class SurveyComponent {
   loading: boolean = false;
   currentEncuesta: any = {};
   //VARIABLES QUE RECUPERAN el tipo de respuestas que se cargaron en el componente de "agrega encuesta" (SURVEY)
+  //EN EL HTML SE GENERAN INDIVIDUALMENTE LOS BOTONES PARA EL TIPO DE RESP DE CADA PREG 
   valorRecuperado = localStorage.getItem('tipoRespuestas1');
   valorRecuperado2 = localStorage.getItem('tipoRespuestas2');
   valorRecuperado3 = localStorage.getItem('tipoRespuestas3');
   valorRecuperado4 = localStorage.getItem('tipoRespuestas4');
   valorRecuperado5 = localStorage.getItem('tipoRespuestas5');
 
-
+  //VARIABLES PARA ALMACENAR EL VALOR DE LA RESPUESTAS QUE SE ELIGEN por cada pregunta
+  resp1 = '';
+  resp2 = '';
+  resp3 = '';
+  resp4 = '';
+  resp5 = '';
   
 
   //!!CONSTRUCTOR VACIO INICIALMENTE
   //!!ELIMINAR LAS LINEAS QUE ESTAN DENTRO 
   constructor(private _encuestaService: EncuestaService, private _route: ActivatedRoute,) {
-
-    
-    const valorRecuperado = localStorage.getItem('tipoRespuestas1');
-    const valorRecuperado2 = localStorage.getItem('tipoRespuestas2');
-
-  if (valorRecuperado) {
-    // Realiza alguna lógica con el valor recuperado
-    console.log('Valor recuperado 1:', valorRecuperado);
-  } else {
-    console.log('La clave "tipoRespuestas" no existe en localStorage.');
-  } 
-  if (valorRecuperado2) {
-    // Realiza alguna lógica con el valor recuperado
-    console.log('Valor recuperado 2:', valorRecuperado2);
-  } else {
-    console.log('La clave "tipoRespuestas" no existe en localStorage.');
-  } 
-
 }
 
   
 //OBJETO QUE ALMACENA las respuestas 
+//MEJORA PARA NO REPETIR VARIABLES
   encuestaRespuestas: any = {
     resp1: '',
     resp2: '',
@@ -61,13 +50,6 @@ export class SurveyComponent {
     resp4: '',
     resp5: '',
   };
-
-    //ALMACENAR DEL OBJECT LA RESPUESTAS PARA RECUPERAR EN DASHBOARD CON LOCALSTORAGE:
-  // Para almacenar un atributo de 'encuestaRespuestas' en localStorage
-
-
-
-
 
 
 
@@ -83,7 +65,19 @@ export class SurveyComponent {
   }
 
   submitEncuesta() {
-    console.log('Respuestas enviadas:', this.encuestaRespuestas);
+    //console.log('Respuestas enviadas:', this.encuestaRespuestas);
+
+    //LA VARIABLE DE RESP DE CADA PREG. SE ALMACENA EN UNA VARIABLE DE LOCALSTORAGE (PARA SER RECUPERADA EN DASHBOARD)
+    localStorage.setItem('respPreg1', this.resp1);
+    localStorage.setItem('respPreg2', this.resp2);
+    localStorage.setItem('respPreg3', this.resp3);
+    localStorage.setItem('respPreg4', this.resp4);
+    localStorage.setItem('respPreg5', this.resp5);
+    /*
+    const valorResp1 = localStorage.getItem('respPreg1');  //!! ESTA LINEA SOLO ES DE PRUEBA
+    console.log("VALOR EN LOCALSTOR",valorResp1);  //!! ESTA LINEA SOLO ES DE PRUEBA
+    */
+   console.log("SE ALMACENO la resp1 en su variable!!!: ", this.resp1); //!! ESTA LINEA SOLO ES DE PRUEBA 
     Swal.fire({
       text: 'Encuesta enviada! Muchas gracias.',
       icon: 'success',
@@ -93,15 +87,17 @@ export class SurveyComponent {
       timerProgressBar: true,
       showConfirmButton: false,
     })
+    
   }
 
+
+  //!!REVISAR
   limpiarCampos() {
-    this.encuestaRespuestas = {
-      hospedaje: '',
-      tiempoEstadia: '',
-      excursiones: [],
-      comentarios: ''
-    };
+    this.resp1=""; //se vacia la variable para q al recargar no entre al ciclo
+    this.resp2=""; 
+    this.resp3=""; 
+    this.resp4=""; 
+    this.resp5=""; 
     Swal.fire({
       text: 'Campos resetados.',
       icon: 'info',

@@ -5,21 +5,7 @@
   <div class="row">
 
     <!--BOTONES DE PRUEBA -->
-    
-    <div class="col-3">
-      <button class="btn btn-primary" (click)="registrarRespuesta('Si')">Sí</button>
-    </div>
-    <div class="col-3">
-      <button class="btn btn-danger" (click)="registrarRespuesta('No')">No</button>
-    </div>
-    <div class="col-3">
-      <button class="btn btn-danger" (click)="registrarRespuesta('1-5')">1-5</button>
-    </div>
-    
-    <div class="col-3">
-      <button class="btn btn-danger" (click)="registrarRespuesta('1-10')">1-10</button>
-    </div>
-    
+   
     
     
 
@@ -32,7 +18,6 @@
       <label >{{ currentEncuesta.preg1 }}</label>
       
       <div *ngIf="valorDeSurvey1 === 'si-no' ">
-        <p>si-no</p>
         <div class="card mt-4 bg-white">
           <div class="card-body">
             <h5 class="card-title" style="color: #000000;">Gráfico de Métricas</h5>
@@ -42,7 +27,7 @@
        </div>
        
       <div *ngIf="valorDeSurvey1 === '1-5' ">
-        <p>ES 1-5</p>
+        
         <div class="card mt-4 bg-white">
           <div class="card-body">
             <h5 class="card-title" style="color: #000000;">Gráfico de Métricas</h5>
@@ -53,7 +38,7 @@
       
       
        <div *ngIf="valorDeSurvey1 === '1-10' ">
-        <p>1-10</p>
+        
         <div class="card mt-4 bg-white">
           <div class="card-body">
             <h5 class="card-title" style="color: #000000;">Gráfico de Métricas</h5>
@@ -70,7 +55,7 @@
       <label >{{ currentEncuesta.preg2 }}</label>
       
       <div *ngIf="valorDeSurvey2 === 'si-no' ">
-        <p>si-no</p>
+        
         <div class="card mt-4 bg-white">
           <div class="card-body">
             <h5 class="card-title" style="color: #000000;">Gráfico de Métricas</h5>
@@ -80,7 +65,7 @@
        </div>
        
       <div *ngIf="valorDeSurvey2 === '1-5' ">
-        <p>ES 1-5</p>
+        
         <div class="card mt-4 bg-white">
           <div class="card-body">
             <h5 class="card-title" style="color: #000000;">Gráfico de Métricas</h5>
@@ -91,7 +76,7 @@
       
       
        <div *ngIf="valorDeSurvey2 === '1-10' ">
-        <p>1-10</p>
+        
         <div class="card mt-4 bg-white">
           <div class="card-body">
             <h5 class="card-title" style="color: #000000;">Gráfico de Métricas</h5>
